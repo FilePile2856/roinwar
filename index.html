@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="x" placeholder="x좌표">
+        <br>
+        <input type="text" id="z" placeholder="z좌표">
+        <br>
+        <button id="btn">좌표 확인하기</button>
+        <br>
+        <div id="result">0,0</div><br>
+    
+    <a href="https://cdn.discordapp.com/attachments/970992909052674138/1056187367721021510/2.png">이미지 다운로드하기</a><br>
+    <h2>사용법</h2><br>
+    <p>1. 그림판을 사용하여 지도를 불러온다(위의 이미지만 사용가능)</p><br>
+    <p>2. 그림판에서 좌표를 확인한다</p><br>
+    <p>3. 좌표를 입력하고 좌표 확인하기를 누른다</p><br>
+    </div>
+</body>
+</html>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #result{
+        font-size: 30px;
+        font-weight: bold;
+        padding: 10%;
+        border: 3px solid black;
+        width: max-content;
+    }
+</style>
+<script>
+    const btn = document.querySelector('#btn');
+    const result = document.querySelector('#result');
+    btn.addEventListener('click',()=>{
+        if (document.querySelector('#x').value === '' || document.querySelector('#z').value === ''){
+            alert('좌표를 입력해주세요');
+            return;
+        }
+        else{
+            const x = document.querySelector('#x').value - 9118;
+            const z = document.querySelector('#z').value - 14079;
+            result.innerHTML = `약 ${x},${z}`;
+        }
+    })
+</script>
